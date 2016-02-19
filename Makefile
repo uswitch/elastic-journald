@@ -1,5 +1,5 @@
 PROGRAM = elastic-journald
-BUILD_NUMBER ?= SNAPSHOT
+BUILD_NUMBER ?= SNAPSHOT-$(shell git rev-parse --short HEAD)
 
 all: $(PROGRAM)
 
@@ -9,5 +9,5 @@ $(PROGRAM): $(wildcard *.go)
 clean: $(PROGRAM)
 	rm -rf $(PROGRAM)
 
-push:
-	aws s3 copy $(PROGRAM) s3://uswitch-tools/$(PROGRAM)/$(BUILD_NUMBER)/$(PROGRAM)
+push: $(PROGRAM)
+	aws s3 cp $(PROGRAM) s3://uswitch-tools/$(PROGRAM)/$(BUILD_NUMBER)/$(PROGRAM)
