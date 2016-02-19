@@ -5,4 +5,3 @@
 elastic-journald
 /.cursor
 .cursor
-/vendor/**/.git
