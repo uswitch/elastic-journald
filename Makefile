@@ -1,4 +1,5 @@
 PROGRAM = elastic-journald
+GO_PATH ?= $(shell pwd)
 BUILD_NUMBER ?= SNAPSHOT-$(shell git rev-parse --short HEAD)
 
 all: $(PROGRAM)
