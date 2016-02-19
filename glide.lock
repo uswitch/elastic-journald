@@ -1,0 +1,70 @@
+hash: c2c7d6a047917673ccf96fb8ba4d6a1acb8a84da1d3477bdcde9b9bcba8947ff
+updated: 2016-02-19T19:12:33.315265667Z
+imports:
+- name: github.com/alecthomas/template
+  version: 14fd436dd20c3cc65242a9f396b61bfc8a3926fc
+  subpackages:
+  - parse
+- name: github.com/alecthomas/units
+  version: 2efee857e7cfd4f3d0138cc3cbb1b4966962b93a
+- name: github.com/araddon/gou
+  version: 1fd0868458fb611a8a956fae0ed0d0cc657cd321
+- name: github.com/bitly/go-hostpool
+  version: d0e59c22a56e8dadfed24f74f452cea5a52722d2
+- name: github.com/docker/engine-api
+  version: 575694d38967b53e06cafe8b722c72892dd64db0
+  subpackages:
+  - client
+  - client/transport
+  - client/transport/cancellable
+  - types
+  - types/container
+  - types/filters
+  - types/network
+  - types/registry
+  - types/time
+  - types/blkiodev
+  - types/strslice
+- name: github.com/docker/go-connections
+  version: 34b5052da6b11e27f5f2e357b38b571ddddd3928
+  subpackages:
+  - sockets
+  - tlsconfig
+  - nat
+- name: github.com/docker/go-units
+  version: 5d2041e26a699eaca682e2ea41c8f891e1060444
+- name: github.com/golang/groupcache
+  version: 4eab30f13db9d8b25c752e99d1583628ac2fa422
+  subpackages:
+  - lru
+  - consistenthash
+  - groupcachepb
+  - singleflight
+- name: github.com/golang/protobuf
+  version: 127091107ff5f822298f1faa7487ffcf578adcf6
+  subpackages:
+  - proto
+- name: github.com/mattbaird/elastigo
+  version: 7dc47d261c9718f93000e2ed2b0b94b13d078e77
+  subpackages:
+  - lib
+- name: github.com/Microsoft/go-winio
+  version: a7276e8bc4c89ae897b8c7b3f167e141347a00c9
+- name: github.com/opencontainers/runc
+  version: 0107c7fb6cef8d2f302f299039cc2f9a903880ac
+  subpackages:
+  - libcontainer/user
+- name: github.com/Sirupsen/logrus
+  version: 57cce1ed6103dce7791881d3e69e55f90d986aa5
+- name: golang.org/x/net
+  version: b6d7b1396ec874c3b00f6c84cd4301a17c56c8ed
+  subpackages:
+  - context
+  - proxy
+- name: golang.org/x/sys
+  version: 50c6bc5e4292a1d4e65c6e9be5f53be28bcbe28e
+  subpackages:
+  - unix
+- name: gopkg.in/alecthomas/kingpin.v2
+  version: 8cccfa8eb2e3183254457fb1749b2667fbc364c7
+devImports: []

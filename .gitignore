@@ -2,8 +2,6 @@
 *.sublime-workspace
 .DS_Store
 .args
-.vendor/
-.elastic_journal_cursor
 elastic-journald
 /.cursor
 .cursor

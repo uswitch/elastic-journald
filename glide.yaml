@@ -1,0 +1,13 @@
+package: github.com/uswitch/elastic-journald
+import:
+- package: github.com/Sirupsen/logrus
+- package: github.com/docker/engine-api
+  subpackages:
+  - client
+- package: github.com/golang/groupcache
+  subpackages:
+  - lru
+- package: github.com/mattbaird/elastigo
+  subpackages:
+  - lib
+- package: gopkg.in/alecthomas/kingpin.v2
