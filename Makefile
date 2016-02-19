@@ -10,10 +10,9 @@ $(PROGRAM): $(wildcard *.go)
 clean: $(PROGRAM)
 	rm -rf $(PROGRAM)
 
-#aws s3 cp $(PROGRAM) s3://uswitch-tools/$(PROGRAM)/$(BUILD_NUMBER)/$(PROGRAM)
 push: $(PROGRAM)
-	 s3cmd put $(PROGRAM) s3://uswitch-tools/$(PROGRAM)/$(BUILD_NUMBER)/$(PROGRAM)
-
+	aws s3 cp $(PROGRAM) s3://uswitch-tools/$(PROGRAM)/$(BUILD_NUMBER)/$(PROGRAM)
+	aws s3 cp $(PROGRAM) s3://uswitch-tools/$(PROGRAM)/latest/$(PROGRAM)
 
 docker-image: Dockerfile
 	docker build -t elastic-journald-build .
