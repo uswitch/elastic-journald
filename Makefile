@@ -10,8 +10,9 @@ $(PROGRAM): $(wildcard *.go)
 clean: $(PROGRAM)
 	rm -rf $(PROGRAM)
 
+#aws s3 cp $(PROGRAM) s3://uswitch-tools/$(PROGRAM)/$(BUILD_NUMBER)/$(PROGRAM)
 push: $(PROGRAM)
-	aws s3 cp $(PROGRAM) s3://uswitch-tools/$(PROGRAM)/$(BUILD_NUMBER)/$(PROGRAM)
+	 s3cmd put $(PROGRAM) s3://uswitch-tools/$(PROGRAM)/$(BUILD_NUMBER)/$(PROGRAM)
 
 
 docker-image: Dockerfile
