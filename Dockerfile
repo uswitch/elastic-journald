@@ -11,5 +11,6 @@ RUN mkdir -p /opt/go
 ENV GOROOT /usr/local/go
 ENV GOPATH /opt/go
 
+ENTRYPOINT ["/usr/local/go/bin/go"]
 
 

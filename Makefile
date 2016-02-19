@@ -17,10 +17,10 @@ push: $(PROGRAM)
 docker-image: Dockerfile
 	docker build -t elastic-journald-build .
 
-docker-build:
+docker-build: docker-image
 	docker run \
 	-u $(shell id -u):$(shell id -g) \
 	-w /opt/go/src/github.com/uswitch/elastic-journald \
 	-v $(PWD):/opt/go/src/github.com/uswitch/elastic-journald \
 	elastic-journald-build \
-	/usr/local/go/bin/go build
+	build
