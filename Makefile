@@ -21,6 +21,6 @@ docker-build: docker-image
 	docker run \
 	-u $(shell id -u):$(shell id -g) \
 	-w /opt/go/src/github.com/uswitch/elastic-journald \
-	-v $(PWD):/opt/go/src/github.com/uswitch/elastic-journald \
+	-v $(shell pwd):/opt/go/src/github.com/uswitch/elastic-journald \
 	elastic-journald-build \
 	build
