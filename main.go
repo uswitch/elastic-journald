@@ -1,6 +1,7 @@
 package main
 
 import (
+	log "github.com/Sirupsen/logrus"
 	kingpin "gopkg.in/alecthomas/kingpin.v2"
 )
 
@@ -14,5 +15,9 @@ var (
 func main() {
 	kingpin.Parse()
 	service := NewService()
-	service.Run()
+
+	err := service.Run()
+	if err != nil {
+		log.Fatalf("%s", err)
+	}
 }

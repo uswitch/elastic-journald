@@ -90,7 +90,7 @@ func (j *Journal) readEntry() (*JournalEntry, error) {
 	if r < 0 {
 		return nil, errors.New(fmt.Sprintf("failed to get realtime timestamp: %s", C.strerror(-r)))
 	}
-	time := time.Unix(int64(realtime/1000000), int64(realtime%1000000)).UTC()
+	time := time.Unix(int64(realtime/1000000), int64(realtime%1000000000)).UTC()
 
 	fields := make(map[string]interface{})
 	err := j.readFields(fields)

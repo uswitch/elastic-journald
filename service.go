@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"os"
 	"time"
 
 	"github.com/uswitch/elastic-journald/journald"
@@ -115,7 +116,16 @@ func (s *Service) Run() error {
 func (s *Service) seekJournalFromCursorFile() error {
 	bytes, err := ioutil.ReadFile(*cursorFile)
 	if err != nil {
-		return err
+		if os.IsNotExist(err) {
+			err = ioutil.WriteFile(*cursorFile, []byte{}, 0644)
+			if err != nil {
+				return err
+			} else {
+				return s.seekJournalFromCursorFile()
+			}
+		} else {
+			return err
+		}
 	}
 
 	if len(bytes) > 0 {
